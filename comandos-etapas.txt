@@ -1,0 +1,44 @@
+
+- Criar projeto (configs iniciais):
+yarn init -y
+
+- Instala Libs:
+yarn add express
+yarn add -D @types/express typescript ts-node-dev
+(a lib ts-node-dev faz auto-reload das alterações no app)
+
+- Criar configs do typescript:
+yarn tsc --init
+mudar "target" para "es2017" no tsconfig.json
+
+- Adicionar scripts "dev" em package.json:
+"scripts": {
+    "dev": "ts-node-dev src/app.ts"
+},
+
+- Instala lib Prisma.io:
+yarn add prisma -D
+yarn prisma init
+
+- Configura Github Auth
+
+- Lib para ter acesso as variáveis do .env:
+yarn add dotenv
+
+
+- Lib para chamadas de api:
+yarn add axios
+yarn add @types/axios -D
+
+- Lib json web token
+yarn add jsonwebtoken
+yarn add @types/jsonwebtoken -D
+
+- Configurar prisma
+yarn prisma migrate dev
+define name: create-user
+yarn add @prisma/client
+Atualizar "scripts":
+"scripts": {
+    "dev": "ts-node-dev --exit-child src/app.ts"
+},
