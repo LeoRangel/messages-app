@@ -37,8 +37,25 @@ yarn add @types/jsonwebtoken -D
 - Configurar prisma
 yarn prisma migrate dev
 define name: create-user
+define name: create-messages
 yarn add @prisma/client
 Atualizar "scripts":
 "scripts": {
     "dev": "ts-node-dev --exit-child src/app.ts"
+},
+yarn add --dev prisma@latest
+yarn add @prisma/client@latest
+yarn prisma studio
+
+- Instalar lib socket.io
+yarn add socket.io
+yarn add @types/socket.io -D
+
+- Instalar lib cors
+yarn add cors
+yarn add @types/cors -D
+
+- Mudar "dev.ts" para "server.ts"
+"scripts": {
+    "dev": "ts-node-dev --exit-child src/server.ts"
 },
